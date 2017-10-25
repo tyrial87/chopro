@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  chopro:
+    image: chopro
+    build:
+      context: ./Chopro
+      dockerfile: Dockerfile
