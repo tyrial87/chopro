@@ -1,8 +1,11 @@
 ﻿using ChoproDat;
+using ChoproDat.Entities;
 using ChoproRepo.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ChoproRepo
 {
@@ -20,9 +23,9 @@ namespace ChoproRepo
             return _context.Chores.ToList();
         }
 
-        public Chore GetChore(int ID)
+        public async Task<Chore> GetChore(int ID)
         {
-            return _context.Chores.FirstOrDefault(chore => chore.ID == ID);
+            return await _context.Chores.SingleOrDefaultAsync(chore => chore.ID == ID);
         }
 
         public bool AddChore(Chore chore)

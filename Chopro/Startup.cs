@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ChoproDat;
+using ChoproRepo;
 using Microsoft.EntityFrameworkCore;
+using ChoproRepo.Interfaces;
 
 namespace Chopro
 {
@@ -23,6 +25,7 @@ namespace Chopro
             services.AddMvc();
             services.AddDbContext<DataContext>(options =>
              options.UseSqlite(Configuration.GetConnectionString("DBConnString")));
+            services.AddScoped<IChoreRepository, ChoreRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

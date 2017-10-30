@@ -1,1 +1,9 @@
-﻿
+﻿<h1>Chores for today</h1>
+
+<p *ngIf="!chores"><em>Loading...</em></p>
+
+<div *ngIf="chores">
+    <div *ngFor="let choreItem of chores">        
+        <div class="alert alert-success" role="alert">{{choreItem.name}} - {{choreItem.description}}</div>
+    </div>
+</div>

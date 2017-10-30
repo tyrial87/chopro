@@ -29,6 +29,7 @@ import { ChoreComponent } from './components/chore/chore.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'chore', component: ChoreComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

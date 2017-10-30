@@ -1,14 +1,13 @@
-﻿using ChoproDat;
-using System;
+﻿using ChoproDat.Entities;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace ChoproRepo.Interfaces
 {
-    interface IChoreRepository
+    public interface IChoreRepository
     {
         List<Chore> GetAll();
-        Chore GetChore(int ID);
+        Task<Chore> GetChore(int ID);
         bool AddChore(Chore chore);
     }
 }
